@@ -14,14 +14,17 @@ def check_and_install_webdriver():
     driver.implicitly_wait(3)
     while True:
         try:
+            # 弹框
             driver.find_elements('xpath','//*[@id="app"]/div/div[2]/div[2]/div[2]/div[3]/div')
-            #
+            #选择A
             choose = driver.find_elements('xpath','//*[@id="app"]/div/div[2]/div[2]/div[2]/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]')
             choose.click()
             time.sleep(1)
+            #确认
             be_sure = driver.find_elements('xpath','//*[@id="app"]/div/div[2]/div[2]/div[2]/div[3]/div/div[3]/button')
             be_sure.click()
             time.sleep(1)
+            # 关闭
             close = driver.find_elements('xpath','//*[@id="app"]/div/div[2]/div[2]/div[2]/div[3]/div/div[3]/button')
             close.click()
         except:
